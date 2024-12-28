@@ -4,16 +4,17 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="page-container">
       <header className="header">
         <div className="logo">
-          <h1>Dev Portfolio</h1>
+          <h1>John Doe</h1>
+          <p>Software Engineer | Web Developer</p>
         </div>
         <nav className="navbar">
           <ul>
             <li><a href="#intro">Intro</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -22,71 +23,96 @@ export default function Home() {
       <main>
         {/* Intro Section */}
         <section id="intro" className="intro">
-          <h2>Welcome to My Developer Portfolio</h2>
-          <p>I am a passionate developer who builds innovative and efficient solutions.</p>
+          <div className="intro-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>
+              I create innovative digital solutions with a focus on performance and user experience. Let's build something great together.
+            </p>
+            <a href="#projects" className="btn-primary">See My Work</a>
+          </div>
         </section>
 
         {/* Projects Section */}
         <section id="projects" className="projects">
-          <h2>My Projects</h2>
+          <h2 className="section-title">Featured Projects</h2>
           <div className="project-cards">
             <div className="project-card">
+              <div className="project-image">
+                <Image src="/project1.png" alt="Project 1" width={500} height={300} />
+              </div>
               <h3>Project 1</h3>
-              <p>Brief description of Project 1.</p>
-              <a href="#" className="btn">View Project</a>
+              <p>A cutting-edge e-commerce platform with real-time updates.</p>
+              <a href="#" className="btn-secondary">View Project</a>
             </div>
+
             <div className="project-card">
+              <div className="project-image">
+                <Image src="/project2.png" alt="Project 2" width={500} height={300} />
+              </div>
               <h3>Project 2</h3>
-              <p>Brief description of Project 2.</p>
-              <a href="#" className="btn">View Project</a>
+              <p>Fully responsive web app with dynamic data visualizations.</p>
+              <a href="#" className="btn-secondary">View Project</a>
             </div>
+
             <div className="project-card">
+              <div className="project-image">
+                <Image src="/project3.png" alt="Project 3" width={500} height={300} />
+              </div>
               <h3>Project 3</h3>
-              <p>Brief description of Project 3.</p>
-              <a href="#" className="btn">View Project</a>
+              <p>A modern SaaS application with a clean, minimalist UI.</p>
+              <a href="#" className="btn-secondary">View Project</a>
             </div>
           </div>
         </section>
 
-        {/* About Me Section */}
+        {/* About Section */}
         <section id="about" className="about">
-          <h2>About Me</h2>
-          <p>
-            I am a web developer with experience in front-end and back-end technologies.
-            My expertise lies in building dynamic web applications with a focus on user experience and performance.
-          </p>
-          <h3>Skills:</h3>
-          <ul>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>HTML/CSS</li>
-            <li>SQL</li>
-            <li>Git</li>
-          </ul>
+          <h2 className="section-title">About Me</h2>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+                I'm a passionate developer with 5+ years of experience building beautiful, performant web applications.
+                I specialize in full-stack development and love solving complex problems with elegant solutions.
+              </p>
+              <h3>Skills & Technologies:</h3>
+              <ul>
+                <li>JavaScript (React, Node.js)</li>
+                <li>HTML, CSS (SASS, Tailwind CSS)</li>
+                <li>Database (SQL, MongoDB)</li>
+                <li>Version Control (Git, GitHub)</li>
+                <li>Cloud (AWS, Google Cloud)</li>
+                <li>Agile Development</li>
+              </ul>
+            </div>
+            <div className="about-image">
+              <Image src="/profile.jpg" alt="Profile" width={300} height={300} />
+            </div>
+          </div>
         </section>
 
         {/* Contact Section */}
         <section id="contact" className="contact">
-          <h2>Contact</h2>
-          <p>If you'd like to work together or have any questions, feel free to reach out!</p>
-          <a href="mailto:developer@example.com" className="btn">Contact Me</a>
+          <h2 className="section-title">Contact</h2>
+          <p>If you want to collaborate or just say hi, feel free to reach out!</p>
+          <a href="mailto:developer@example.com" className="btn-primary">Contact Me</a>
         </section>
       </main>
 
       <footer className="footer">
-        <div>
-          <p>&copy; 2024 Developer Portfolio</p>
+        <div className="footer-content">
+          <p>&copy; 2024 John Doe | All Rights Reserved</p>
         </div>
       </footer>
 
       <style jsx>{`
-        .container {
+        /* Page Container */
+        .page-container {
           font-family: 'Arial', sans-serif;
+          background-color: #f7f7f7;
           color: #333;
-          background-color: #fafafa;
           margin: 0;
           padding: 0;
+          overflow-x: hidden;
         }
 
         /* Header */
@@ -94,165 +120,182 @@ export default function Home() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 2rem;
-          background-color: #333;
-          color: #fff;
+          background: #222;
+          color: white;
+          padding: 2rem 4rem;
         }
 
         .logo h1 {
           margin: 0;
-          font-size: 2rem;
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+
+        .logo p {
+          margin: 0;
+          font-size: 1.2rem;
+          font-weight: 400;
         }
 
         .navbar ul {
-          list-style: none;
           display: flex;
-          gap: 2rem;
+          list-style: none;
+        }
+
+        .navbar ul li {
+          margin-right: 3rem;
         }
 
         .navbar ul li a {
-          color: #fff;
           text-decoration: none;
+          color: white;
+          font-weight: 500;
           font-size: 1rem;
         }
 
         .navbar ul li a:hover {
-          text-decoration: underline;
-        }
-
-        /* Main Content */
-        main {
-          padding: 3rem 1rem;
-          max-width: 1200px;
-          margin: 0 auto;
+          color: #00bcd4;
         }
 
         /* Intro Section */
         .intro {
+          background: linear-gradient(135deg, #00bcd4, #2196f3);
+          color: white;
+          padding: 6rem 4rem;
           text-align: center;
-          margin-bottom: 3rem;
         }
 
         .intro h2 {
-          font-size: 2.5rem;
-          color: #333;
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
         }
 
         .intro p {
-          font-size: 1.2rem;
-          color: #555;
+          font-size: 1.5rem;
+          max-width: 800px;
+          margin: 0 auto;
+          margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+          background-color: #00bcd4;
+          color: white;
+          padding: 1rem 2rem;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+          background-color: #0097a7;
         }
 
         /* Projects Section */
         .projects {
-          margin-bottom: 3rem;
+          padding: 6rem 4rem;
+          background-color: white;
         }
 
-        .projects h2 {
+        .section-title {
           font-size: 2.5rem;
-          color: #333;
           text-align: center;
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
+          font-weight: 600;
         }
 
         .project-cards {
           display: flex;
           justify-content: space-between;
-          gap: 1rem;
+          gap: 3rem;
+          flex-wrap: wrap;
         }
 
         .project-card {
           background-color: #fff;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
           width: 30%;
-          text-align: center;
+          transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+          transform: translateY(-10px);
+        }
+
+        .project-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .project-card h3 {
+          padding: 1.5rem;
           font-size: 1.5rem;
-          margin-bottom: 1rem;
+          font-weight: 600;
         }
 
         .project-card p {
+          padding: 0 1.5rem;
           font-size: 1rem;
-          margin-bottom: 1.5rem;
+          color: #555;
         }
 
-        .btn {
-          background-color: #0070f3;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: bold;
+        .btn-secondary {
+          display: block;
           text-align: center;
-        }
-
-        .btn:hover {
-          background-color: #005bb5;
+          padding: 1rem;
+          margin: 1.5rem 0 2rem;
+          background-color: #2196f3;
+          color: white;
+          border-radius: 25px;
+          text-decoration: none;
         }
 
         /* About Section */
         .about {
-          margin-bottom: 3rem;
+          padding: 6rem 4rem;
+          background-color: #f7f7f7;
         }
 
-        .about h2 {
-          font-size: 2.5rem;
-          color: #333;
-          text-align: center;
-          margin-bottom: 1.5rem;
+        .about-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
-        .about p {
+        .about-text {
+          width: 50%;
+        }
+
+        .about-text p {
           font-size: 1.125rem;
           color: #555;
-          text-align: center;
-          margin-bottom: 1.5rem;
+          line-height: 1.6;
         }
 
-        .about ul {
-          list-style: none;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 1rem;
-        }
-
-        .about ul li {
-          font-size: 1rem;
-          color: #333;
+        .about-image {
+          width: 40%;
+          border-radius: 50%;
+          overflow: hidden;
         }
 
         /* Contact Section */
         .contact {
+          padding: 6rem 4rem;
           text-align: center;
-          margin-bottom: 3rem;
-        }
-
-        .contact h2 {
-          font-size: 2.5rem;
-          color: #333;
-          margin-bottom: 1.5rem;
-        }
-
-        .contact p {
-          font-size: 1.125rem;
-          color: #555;
-          margin-bottom: 1.5rem;
         }
 
         /* Footer */
         .footer {
           background-color: #333;
-          color: #fff;
+          color: white;
           text-align: center;
           padding: 2rem;
         }
 
-        .footer p {
+        .footer-content {
           font-size: 1rem;
         }
       `}</style>
