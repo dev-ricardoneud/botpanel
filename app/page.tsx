@@ -4,208 +4,256 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="home-container">
+    <div className="container">
       <header className="header">
-        <Image
-          className="logo"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+        <div className="logo">
+          <h1>Dev Portfolio</h1>
+        </div>
+        <nav className="navbar">
+          <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <main className="main-content">
-        <section className="intro">
-          <h1 className="title">Welcome to Next.js</h1>
-          <p className="description">
-            Build blazing fast websites and apps with React and Next.js.
-            Get started with the best developer experience.
+      <main>
+        {/* Intro Section */}
+        <section id="intro" className="intro">
+          <h2>Welcome to My Developer Portfolio</h2>
+          <p>I am a passionate developer who builds innovative and efficient solutions.</p>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="projects">
+          <h2>My Projects</h2>
+          <div className="project-cards">
+            <div className="project-card">
+              <h3>Project 1</h3>
+              <p>Brief description of Project 1.</p>
+              <a href="#" className="btn">View Project</a>
+            </div>
+            <div className="project-card">
+              <h3>Project 2</h3>
+              <p>Brief description of Project 2.</p>
+              <a href="#" className="btn">View Project</a>
+            </div>
+            <div className="project-card">
+              <h3>Project 3</h3>
+              <p>Brief description of Project 3.</p>
+              <a href="#" className="btn">View Project</a>
+            </div>
+          </div>
+        </section>
+
+        {/* About Me Section */}
+        <section id="about" className="about">
+          <h2>About Me</h2>
+          <p>
+            I am a web developer with experience in front-end and back-end technologies.
+            My expertise lies in building dynamic web applications with a focus on user experience and performance.
           </p>
+          <h3>Skills:</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>HTML/CSS</li>
+            <li>SQL</li>
+            <li>Git</li>
+          </ul>
         </section>
 
-        <section className="cta">
-          <div className="cta-buttons">
-            <a
-              className="cta-button deploy-btn"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy Now
-            </a>
-            <a
-              className="cta-button docs-btn"
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the Docs
-            </a>
-          </div>
-        </section>
-
-        <section className="resources">
-          <div className="resources-links">
-            <a
-              href="https://nextjs.org/learn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resource-link"
-            >
-              Learn Next.js
-            </a>
-            <a
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resource-link"
-            >
-              Next.js Documentation
-            </a>
-            <a
-              href="https://vercel.com/templates?framework=next.js"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resource-link"
-            >
-              Vercel Templates
-            </a>
-          </div>
+        {/* Contact Section */}
+        <section id="contact" className="contact">
+          <h2>Contact</h2>
+          <p>If you'd like to work together or have any questions, feel free to reach out!</p>
+          <a href="mailto:developer@example.com" className="btn">Contact Me</a>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="footer-content">
-          <p className="footer-text">Built with ❤️ by the Next.js team</p>
+        <div>
+          <p>&copy; 2024 Developer Portfolio</p>
         </div>
       </footer>
 
       <style jsx>{`
-        .home-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          background: #fafafa;
-          padding: 2rem;
-          font-family: 'Helvetica', sans-serif;
+        .container {
+          font-family: 'Arial', sans-serif;
+          color: #333;
+          background-color: #fafafa;
+          margin: 0;
+          padding: 0;
         }
 
+        /* Header */
         .header {
-          margin-bottom: 2rem;
-        }
-
-        .logo {
-          filter: invert(1);
-        }
-
-        .main-content {
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
+          padding: 2rem;
+          background-color: #333;
+          color: #fff;
+        }
+
+        .logo h1 {
+          margin: 0;
+          font-size: 2rem;
+        }
+
+        .navbar ul {
+          list-style: none;
+          display: flex;
+          gap: 2rem;
+        }
+
+        .navbar ul li a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+
+        .navbar ul li a:hover {
+          text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+          padding: 3rem 1rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        /* Intro Section */
+        .intro {
           text-align: center;
           margin-bottom: 3rem;
         }
 
-        .intro {
+        .intro h2 {
+          font-size: 2.5rem;
+          color: #333;
+        }
+
+        .intro p {
+          font-size: 1.2rem;
+          color: #555;
+        }
+
+        /* Projects Section */
+        .projects {
+          margin-bottom: 3rem;
+        }
+
+        .projects h2 {
+          font-size: 2.5rem;
+          color: #333;
+          text-align: center;
           margin-bottom: 2rem;
         }
 
-        .title {
-          font-size: 2.5rem;
-          font-weight: 700;
-          color: #333;
-          margin-bottom: 1rem;
-        }
-
-        .description {
-          font-size: 1.125rem;
-          color: #555;
-          max-width: 700px;
-        }
-
-        .cta {
-          margin-top: 2rem;
-        }
-
-        .cta-buttons {
+        .project-cards {
           display: flex;
-          gap: 1.5rem;
-          justify-content: center;
-        }
-
-        .cta-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
-          font-size: 1rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-
-        .deploy-btn {
-          background-color: #000;
-          color: #fff;
-        }
-
-        .deploy-btn:hover {
-          background-color: #333;
-        }
-
-        .docs-btn {
-          background-color: #0070f3;
-          color: #fff;
-        }
-
-        .docs-btn:hover {
-          background-color: #005bb5;
-        }
-
-        .resources {
-          margin-top: 3rem;
-        }
-
-        .resources-links {
-          display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           gap: 1rem;
         }
 
-        .resource-link {
-          color: #0070f3;
-          font-size: 1.125rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .resource-link:hover {
-          color: #005bb5;
-        }
-
-        .footer {
-          margin-top: 5rem;
-          padding: 1rem;
-          background-color: #333;
-          color: #fff;
-          width: 100%;
+        .project-card {
+          background-color: #fff;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 30%;
           text-align: center;
         }
 
-        .footer-text {
+        .project-card h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .project-card p {
           font-size: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn {
+          background-color: #0070f3;
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        .btn:hover {
+          background-color: #005bb5;
+        }
+
+        /* About Section */
+        .about {
+          margin-bottom: 3rem;
+        }
+
+        .about h2 {
+          font-size: 2.5rem;
+          color: #333;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+
+        .about p {
+          font-size: 1.125rem;
+          color: #555;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+
+        .about ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        .about ul li {
+          font-size: 1rem;
+          color: #333;
+        }
+
+        /* Contact Section */
+        .contact {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .contact h2 {
+          font-size: 2.5rem;
+          color: #333;
+          margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+          font-size: 1.125rem;
+          color: #555;
+          margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+          background-color: #333;
           color: #fff;
+          text-align: center;
+          padding: 2rem;
+        }
+
+        .footer p {
+          font-size: 1rem;
         }
       `}</style>
     </div>
