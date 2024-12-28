@@ -1,103 +1,213 @@
 'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="home-container">
+      <header className="header">
         <Image
-          className="dark:invert"
+          className="logo"
           src="/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="main-content">
+        <section className="intro">
+          <h1 className="title">Welcome to Next.js</h1>
+          <p className="description">
+            Build blazing fast websites and apps with React and Next.js.
+            Get started with the best developer experience.
+          </p>
+        </section>
+
+        <section className="cta">
+          <div className="cta-buttons">
+            <a
+              className="cta-button deploy-btn"
+              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/vercel.svg"
+                alt="Vercel logomark"
+                width={20}
+                height={20}
+              />
+              Deploy Now
+            </a>
+            <a
+              className="cta-button docs-btn"
+              href="https://nextjs.org/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read the Docs
+            </a>
+          </div>
+        </section>
+
+        <section className="resources">
+          <div className="resources-links">
+            <a
+              href="https://nextjs.org/learn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resource-link"
+            >
+              Learn Next.js
+            </a>
+            <a
+              href="https://nextjs.org/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resource-link"
+            >
+              Next.js Documentation
+            </a>
+            <a
+              href="https://vercel.com/templates?framework=next.js"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resource-link"
+            >
+              Vercel Templates
+            </a>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p className="footer-text">Built with ❤️ by the Next.js team</p>
+        </div>
       </footer>
+
+      <style jsx>{`
+        .home-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background: #fafafa;
+          padding: 2rem;
+          font-family: 'Helvetica', sans-serif;
+        }
+
+        .header {
+          margin-bottom: 2rem;
+        }
+
+        .logo {
+          filter: invert(1);
+        }
+
+        .main-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .intro {
+          margin-bottom: 2rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 1rem;
+        }
+
+        .description {
+          font-size: 1.125rem;
+          color: #555;
+          max-width: 700px;
+        }
+
+        .cta {
+          margin-top: 2rem;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 1.5rem;
+          justify-content: center;
+        }
+
+        .cta-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 1.5rem;
+          border-radius: 9999px;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .deploy-btn {
+          background-color: #000;
+          color: #fff;
+        }
+
+        .deploy-btn:hover {
+          background-color: #333;
+        }
+
+        .docs-btn {
+          background-color: #0070f3;
+          color: #fff;
+        }
+
+        .docs-btn:hover {
+          background-color: #005bb5;
+        }
+
+        .resources {
+          margin-top: 3rem;
+        }
+
+        .resources-links {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .resource-link {
+          color: #0070f3;
+          font-size: 1.125rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+          color: #005bb5;
+        }
+
+        .footer {
+          margin-top: 5rem;
+          padding: 1rem;
+          background-color: #333;
+          color: #fff;
+          width: 100%;
+          text-align: center;
+        }
+
+        .footer-text {
+          font-size: 1rem;
+          color: #fff;
+        }
+      `}</style>
     </div>
   );
 }
